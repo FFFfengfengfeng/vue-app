@@ -15,10 +15,7 @@
         <p id="J_Test"></p>
         <a href="javascript:;" class="" id="J_Play">播放</a>
         <a href="javascript:;" class="" id="J_Pause">暂停</a>
-    	<video width="100%" height="240" controls="true" webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="auto" playsinline="true" id="J_Video">
-    		<!--<source type="video/mp4"></source>-->
-    		<source src="http://123.151.41.77/vhot2.qqvideo.tc.qq.com/n0516w7omgz.mp4?sdtfrom=v3010&guid=fa17d987c3129392aac926ce8135a3f8&vkey=E13177F86D8F17E29C1249E7004185139CB99533C5F42E1E6ECD14BAB46DC7D1636E91306586F25236F2BBA2B264096C07A8FA745DC91B83088D78694247D0EA3DF0F6DC74280916D35BDF54A472682C4D7322B641A9CA57&ocid=399777708&ocid=730666412&ocid=1342761738" type="video/mp4"></source>
-    		当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+    	<video width="100%" height="240" src="video/movie.mp4" webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="auto" playsinline="true" id="J_Video">
     	</video>
     	<script src="jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
     	<script type="text/javascript">
@@ -33,7 +30,8 @@
     		    video.pause();
     		}
     		$('#J_Video').on('play', function(e) {
-                 test.innerHTML = video.currentTime;
+    		    console.log(video);
+                test.innerHTML = video.currentTime;
     		});
     	</script>
     </body>
