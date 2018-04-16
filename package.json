@@ -1,34 +1,16 @@
 {
-  "name": "fvideo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.18.12",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-babel": "^6.1.2",
-    "gulp-clean-css": "^3.4.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-less": "^3.3.2",
-    "gulp-notify": "^3.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^3.0.0"
+  "name": "react-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "1.1.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FFFfengfengfeng/fvideo.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FFFfengfengfeng/fvideo/issues"
-  },
-  "homepage": "https://github.com/FFFfengfengfeng/fvideo#readme",
-  "keywords": [],
-  "description": ""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
