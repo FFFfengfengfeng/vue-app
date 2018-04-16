@@ -1,7 +1,6 @@
 {
   "name": "fvideo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -29,5 +28,7 @@
   "bugs": {
     "url": "https://github.com/FFFfengfengfeng/fvideo/issues"
   },
-  "homepage": "https://github.com/FFFfengfengfeng/fvideo#readme"
+  "homepage": "https://github.com/FFFfengfengfeng/fvideo#readme",
+  "keywords": [],
+  "description": ""
 }
