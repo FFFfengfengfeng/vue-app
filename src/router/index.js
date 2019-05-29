@@ -4,12 +4,19 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
+const Login = () => import('@/view/login/Login');
+
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+    routes: [
+      {
+          path: '/',
+          name: 'HelloWorld',
+          component: HelloWorld
+      },
+      {
+          path: '/login',
+          name: 'login',
+          component: Login
+      }
+    ]
 })
