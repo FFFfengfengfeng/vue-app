@@ -1,7 +1,5 @@
 <template>
-    <div class="classify-page">
-        
-    </div>
+    <div class="home-page">home</div>
 </template>
 
 <script>

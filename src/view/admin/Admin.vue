@@ -1,5 +1,5 @@
 <template>
-    <div class="classify-page">
+    <div class="admin-page">
         
     </div>
 </template>

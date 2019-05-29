@@ -5,8 +5,12 @@ Vue.use(Router)
 
 // 登录页
 const Login = () => import('@/view/login/Login');
-// 主页
+// 后台页
 const Index = () => import('@/view/index/Index');
+// 主页
+const Home = () => import('@/view/home/Home');
+// 管理员管理
+const Admin = () => import('@/view/Admin/admin');
 // 分类管理
 const Classify = () => import('@/view/classify/Classify');
 // 商品管理
@@ -18,7 +22,18 @@ export default new Router({
             path: '/',
             name: 'index',
             component: Index,
+            redirect: '/home',
             children: [
+                {
+                    path: '/home',
+                    name: 'home',
+                    component: Home
+                },
+                {
+                    path: '/admin',
+                    name: 'admin',
+                    component: Admin
+                },
                 {
                     path: '/classify',
                     name: 'classify',

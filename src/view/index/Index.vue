@@ -28,17 +28,17 @@
         </el-header>
         <el-container>
             <el-aside width="250px">
-                <el-menu default-active="/classify"
+                <el-menu default-active="1"
                          router="true"
                          class="index-menu">
                     <el-submenu index="1">
                         <template slot="title">
-                            <i class="el-icon-location"></i>
-                            <span>导航一</span>
+                            <i class="el-icon-setting"></i>
+                            <span>系统管理</span>
                         </template>
-                        <el-menu-item index="1-1">
+                        <el-menu-item index="/admin">
                             <i class="el-icon-menu"></i>
-                            <span slot="title">1</span>
+                            <span slot="title">管理员管理</span>
                         </el-menu-item>
                         <el-menu-item index="1-2">
                             <i class="el-icon-menu"></i>
@@ -60,6 +60,11 @@
                 </el-menu>
             </el-aside>
             <el-main>
+                <el-breadcrumb separator-class="el-icon-arrow-right">
+                    <el-breadcrumb-item>首页</el-breadcrumb-item>
+                    <el-breadcrumb-item>分类管理</el-breadcrumb-item>
+                    <el-breadcrumb-item>分类列表</el-breadcrumb-item>
+                </el-breadcrumb>
                 <router-view/>
             </el-main>
         </el-container>
