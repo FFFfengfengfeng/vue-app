@@ -2,10 +2,8 @@
     <el-container class="index-page">
         <el-header class="index-header">
             <img class="index-logo" src="../../assets/images/logo.svg">
-            <el-menu :default-active="activeIndex2"
-                     class="index-nav"
+            <!-- <el-menu class="index-nav"
                      mode="horizontal"
-                     @select="handleSelect"
                      background-color="#545c64"
                      text-color="#fff"
                      active-text-color="#ffd04b">
@@ -24,27 +22,17 @@
             </el-submenu>
                 <el-menu-item index="3" disabled>消息中心</el-menu-item>
                 <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-            </el-menu>
+            </el-menu> -->
         </el-header>
         <el-container>
             <el-aside width="250px">
-                <el-menu default-active="1"
-                         router="true"
+                <el-menu default-active="/admin"
+                         :router="true"
                          class="index-menu">
-                    <el-submenu index="1">
-                        <template slot="title">
-                            <i class="el-icon-setting"></i>
-                            <span>系统管理</span>
-                        </template>
-                        <el-menu-item index="/admin">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">管理员管理</span>
-                        </el-menu-item>
-                        <el-menu-item index="1-2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">2</span>
-                        </el-menu-item>
-                    </el-submenu>
+                    <el-menu-item index="/admin">
+                        <i class="el-icon-setting"></i>
+                        <span slot="title">管理员管理</span>
+                    </el-menu-item>
                     <el-menu-item index="/classify">
                         <i class="el-icon-tickets"></i>
                         <span slot="title">分类管理</span>
@@ -53,18 +41,13 @@
                         <i class="el-icon-goods"></i>
                         <span slot="title">商品管理</span>
                     </el-menu-item>
-                    <el-menu-item index="4">
+                    <!-- <el-menu-item index="/">
                         <i class="el-icon-monitor"></i>
                         <span slot="title">广告管理</span>
-                    </el-menu-item>
+                    </el-menu-item> -->
                 </el-menu>
             </el-aside>
             <el-main>
-                <el-breadcrumb separator-class="el-icon-arrow-right">
-                    <el-breadcrumb-item>首页</el-breadcrumb-item>
-                    <el-breadcrumb-item>分类管理</el-breadcrumb-item>
-                    <el-breadcrumb-item>分类列表</el-breadcrumb-item>
-                </el-breadcrumb>
                 <router-view/>
             </el-main>
         </el-container>
@@ -72,7 +55,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            asideRouter: true
+        }
+    }
+};
 </script>
 
 <style lang="less" scoped>

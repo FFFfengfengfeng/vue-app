@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import $storage from '../utils/storage'
 
 Vue.use(Router)
 
@@ -16,7 +17,7 @@ const Classify = () => import('@/view/classify/Classify');
 // 商品管理
 const Goods = () => import('@/view/goods/Goods');
 
-export default new Router({
+const router = new Router({
     routes: [
         {
             path: '/',
@@ -52,4 +53,21 @@ export default new Router({
             component: Login
         }
     ]
-})
+});
+
+// 路由守护
+router.beforeEach((to, from, next) => {
+    let token = $storage('token');
+
+    if (token || to.fullPath == '/login') {
+        next();
+    } else {
+        router.push({
+            path: '/login',
+            query: {
+                redirect: to.fullPath
+            }
+        });
+    }
+});
+export default router
