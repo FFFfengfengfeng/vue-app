@@ -59,15 +59,14 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
     let token = $storage('token');
 
-    if (token || to.fullPath == '/login') {
-        next();
+    if (to.fullPath == '/login') {
+        return next();
+    }
+
+    if (!token) {
+        return next({path: '/login'});
     } else {
-        router.push({
-            path: '/login',
-            query: {
-                redirect: to.fullPath
-            }
-        });
+        next();
     }
 });
 export default router

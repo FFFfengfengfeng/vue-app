@@ -51,6 +51,16 @@ export default {
                     if (res.status == 1) {
                         $storage('token', res.data.token);
                         $storage('name', res.data.name);
+                        _this.$notify({
+                            title: '成功',
+                            message: '登录成功',
+                            type: 'success'
+                        });
+                        setTimeout(() => {
+                            _this.$router.push({
+                                path: '/'
+                            });
+                        }, 200);
                     } else {
                         _this.$notify.error({
                             title: '错误',

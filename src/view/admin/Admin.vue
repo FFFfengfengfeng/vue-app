@@ -23,7 +23,29 @@
 export default {
     data() {
         return {
+            keyword: '',
+            size: 10,
+            page: 1
+        }
+    },
+    created() {
+        this.getList();
+    },
+    methods: {
+        getList: function() {
+            const _this = this;
 
+            _this.$http({
+                url: '/admin/user/lists',
+                data: {
+                    keyword: _this.keyword,
+                    size: _this.size,
+                    page: _this.page
+                },
+                success: function(res) {
+
+                }
+            })
         }
     }
 }
