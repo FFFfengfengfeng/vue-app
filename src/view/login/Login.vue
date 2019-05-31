@@ -2,15 +2,15 @@
     <div class="login-page">
         <el-card class="login-form">
             <div class="login-title">欢迎登录</div>
-            <el-form ref="form" :rules="rules" label-width="80px">
+            <el-form ref="form" :rules="rules" :model="form" label-width="80px">
                 <el-form-item label="用户名" prop="name">
-                    <el-input v-model="name" placeholder="请输入用户名"></el-input>
+                    <el-input v-model="form.name" type="text" placeholder="请输入用户名"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="password">
-                    <el-input v-model="password" placeholder="请输入密码"></el-input>
+                    <el-input v-model="form.password" type="password" placeholder="请输入密码"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" >立即登录</el-button>
+                    <el-button type="primary" @click="login">立即登录</el-button>
                     <el-button>取消</el-button>
                 </el-form-item>
             </el-form>
@@ -19,11 +19,14 @@
 </template>
 
 <script>
+import $storage from '../../utils/storage'
 export default {
     data() {
         return {
-            name: '',
-            password: '',
+            form: {
+                name: '',
+                password: '',
+            },
             rules : {
                 name: [
                     {required: true, message: '请输入用户名称', trigger: 'blur'},
@@ -32,6 +35,31 @@ export default {
                     {required: true, message: '请输入密码', trigger: 'blur'},
                 ],
             }
+        }
+    },
+    methods: {
+        login: function() {
+            const _this = this;
+
+            _this.$http({
+                url: '/admin/login/enter',
+                data: {
+                    name: _this.form.name,
+                    password: _this.form.password
+                },
+                success: function(res) {
+                    if (res.status == 1) {
+                        $storage('token', res.data.token);
+                        $storage('name', res.data.name);
+                    } else {
+                        _this.$notify.error({
+                            title: '错误',
+                            message: res.data.msg,
+                        });
+                    }
+                    console.log(res);
+                }
+            });
         }
     }
 }
