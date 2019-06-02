@@ -54,7 +54,8 @@ export default {
                         _this.$notify({
                             title: '成功',
                             message: '登录成功',
-                            type: 'success'
+                            type: 'success',
+                            duration: 1000
                         });
                         setTimeout(() => {
                             _this.$router.push({
@@ -64,7 +65,8 @@ export default {
                     } else {
                         _this.$notify.error({
                             title: '错误',
-                            message: res.data.msg,
+                            message: res.msg,
+                            duration: 1000
                         });
                     }
                     console.log(res);

@@ -10,8 +10,14 @@ const Login = () => import('@/view/login/Login');
 const Index = () => import('@/view/index/Index');
 // 主页
 const Home = () => import('@/view/home/Home');
+
 // 管理员管理
-const Admin = () => import('@/view/Admin/admin');
+const User = () => import('@/view/user/User');
+// 管理员添加
+const UserAdd = () => import('@/view/user/Add');
+// 管理员修改
+const UserEdit = () => import('@/view/user/Edit');
+
 // 分类管理
 const Classify = () => import('@/view/classify/Classify');
 // 商品管理
@@ -31,9 +37,19 @@ const router = new Router({
                     component: Home
                 },
                 {
-                    path: '/admin',
-                    name: 'admin',
-                    component: Admin
+                    path: '/user',
+                    name: 'user',
+                    component: User
+                },
+                {
+                    path: '/user-add',
+                    name: 'user-add',
+                    component: UserAdd
+                },
+                {
+                    path: '/user-edit',
+                    name: 'user-edit',
+                    component: UserEdit
                 },
                 {
                     path: '/classify',

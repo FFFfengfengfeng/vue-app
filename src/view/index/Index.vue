@@ -29,7 +29,7 @@
                 <el-menu default-active="/admin"
                          :router="true"
                          class="index-menu">
-                    <el-menu-item index="/admin">
+                    <el-menu-item index="/user">
                         <i class="el-icon-setting"></i>
                         <span slot="title">管理员管理</span>
                     </el-menu-item>
