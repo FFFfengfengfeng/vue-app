@@ -1,16 +1,17 @@
-function $storage(key, ...value) {
-    if (!key) {
-        throw new Error('缺少key值');
-    }
-
-    if (value.length > 0) {
-        window.localStorage.setItem(key, value[0]);
-
-        return window.localStorage.getItem(key);
-    }
-
-    return window.localStorage.getItem(key);
-
+function add(key, value) {
+    window.localStorage.setItem(key, value);
 }
 
-export default $storage;
+function remove(key) {
+    try {
+        window.localStorage.removeItem(key);
+    } catch (error) {
+        return error;
+    }
+}
+
+function get(key) {
+    return window.localStorage.getItem(key);
+}
+
+export default { add, remove, get };

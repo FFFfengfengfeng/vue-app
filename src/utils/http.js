@@ -1,8 +1,8 @@
 import axios from 'axios'
-import $storage from './storage'
+import Storage from './storage'
 
 function $http(options) {
-    let token = $storage('token');
+    let token = Storage.get('token');
     let data  = Object.assign({
         token: token
     }, options.data || {});

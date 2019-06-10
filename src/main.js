@@ -8,11 +8,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/less/main.less'
 import '@/assets/less/reset.less'
 import { $http } from './utils/http'
-import $storage from './utils/storage'
+import Storage from './utils/storage'
 
 Vue.use(ElementUI)
 Vue.prototype.$http = $http
-Vue.prototype.$storage = $storage
+Vue.prototype.$storage = Storage
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

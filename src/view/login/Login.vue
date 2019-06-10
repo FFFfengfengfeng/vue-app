@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import $storage from '../../utils/storage'
 export default {
     data() {
         return {
@@ -49,8 +48,8 @@ export default {
                 },
                 success: function(res) {
                     if (res.status == 1) {
-                        $storage('token', res.data.token);
-                        $storage('name', res.data.name);
+                        _this.$storage.add('token', res.data.token);
+                        _this.$storage.add('name', res.data.name);
                         _this.$notify({
                             title: '成功',
                             message: '登录成功',

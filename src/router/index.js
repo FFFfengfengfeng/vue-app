@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import $storage from '../utils/storage'
+import Storage from '../utils/storage'
 
 Vue.use(Router)
 
@@ -73,7 +73,7 @@ const router = new Router({
 
 // 路由守护
 router.beforeEach((to, from, next) => {
-    let token = $storage('token');
+    let token = Storage.get('token');
 
     if (to.fullPath == '/login') {
         return next();
