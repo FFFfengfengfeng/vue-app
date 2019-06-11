@@ -1,7 +1,7 @@
 <template>
     <el-container class="index-page">
         <el-header class="index-header">
-            <img class="index-logo" src="../../assets/images/logo.svg">
+            <img class="index-logo" src="../../assets/images/logo.svg" @click="toHome">
             <el-menu class="index-nav"
                      mode="horizontal"
                      background-color="#545c64"
@@ -62,7 +62,7 @@ export default {
     methods: {
         loginOut: function() {
             const _this = this;
-            
+
             _this.$storage.remove('token');
             _this.$storage.remove('name');
             _this.$notify({
@@ -76,6 +76,11 @@ export default {
                     path: '/login'
                 });
             }, 200);
+        },
+        toHome: function() {
+            this.$router.push({
+                path: '/home'
+            });
         }
     }
 };
@@ -97,8 +102,7 @@ export default {
 .index-logo{
     display: block;
     height: 60px;
-}
-.index-nav{
+    cursor: pointer;
 }
 </style>
 
